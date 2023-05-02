@@ -14,19 +14,19 @@ const app = Vue.createApp ({
             axios.get('https://flynn.boolean.careers/exercises/api/random/word')
             .then((response) => {
               this.wordsList.push(response.data.response);
-              
          })
         },
-
-    getSentence(){
-        for(let i = 0; i < this.wordsNumber; i++) {
-            this.getRandomWord();
-        }
-    },
-   }, 
-
-
-   created (){
+        
+        getSentence(){
+            for(let i = 0; i < this.wordsNumber; i++) {
+                this.getRandomWord();
+            }
+            console.log(this.wordsList);
+        },
+    }, 
+    
+    
+    created (){
     this.getSentence();
    }
 });

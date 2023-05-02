@@ -25,8 +25,16 @@
 <body>
   <div id="root">
     <div class="container">
-        <h1 class="title">Il motto del giorno</h1>
-        <span v-for="word in wordsList">{{ word }} </span>
+        <h1 class="title">Il Consiglio del giorno:</h1>
+        <div class="img-container">
+            <img src="https://cdn-hhimf.nitrocdn.com/YidrufUbyueQrVuWxDvvltZLJIzFZxce/assets/static/optimized/rev-214eb34/wp-content/uploads/2020/04/consiglio-del-giorno-645x800.jpg" alt="consiglio">
+        </div>
+        <div class="words" >
+            <span v-for="(word, i) in wordsList">
+                <span v-if="i === wordsList.length - 1">{{ word +  '.' }} </span>
+                <span v-else>{{ word + ' ' }}</span>
+            </span>
+        </div>
     </div>
   </div>
 </body>
