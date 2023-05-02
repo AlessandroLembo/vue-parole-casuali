@@ -1,7 +1,7 @@
 console.log('VUE JS', Vue);
 
 
-const app = vue.createApp ({
+const app = Vue.createApp ({
    data() {
       return {
         wordsList: [],
@@ -10,7 +10,17 @@ const app = vue.createApp ({
    },
 
    methods: {
-   
+   getRandomWord(){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/word')
+            .then((response) => {
+              this.wordsList.push(response.data.response);
+              console.log(this.wordsList);
+         })
+        }
+   }, 
+
+   created (){
+      this.getRandomWord();
    }
 });
 
