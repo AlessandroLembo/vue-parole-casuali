@@ -20,7 +20,9 @@ const app = Vue.createApp ({
    }, 
 
    created (){
-      this.getRandomWord();
+    for(let i = 0; i < this.wordsNumber; i++){
+        this.getRandomWord();
+       }
    }
 });
 
