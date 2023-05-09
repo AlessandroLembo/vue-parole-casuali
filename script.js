@@ -25,16 +25,17 @@ const app = Vue.createApp ({
          })
         },
          
-        getSentence(){
-            for(let i = 0; i < this.wordsNumber; i++) {
-                this.getRandomWord();
-            }
-            console.log(this.wordsList);
-        },
-    }, 
+   getSentence(){
+       for(let i = 0; i < this.wordsNumber; i++) {
+           this.getRandomWord();
+       }
+       console.log(this.wordsList);
+   },
+   
+}, 
     
     
-    created (){
+   created (){
     this.getSentence();
    }
 });
